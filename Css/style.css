@@ -1,0 +1,225 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 80px; /* Agar konten tidak tertutup tombol fixed */
+}
+
+/* Hero Section */
+.hero {
+  height: 60vh;
+  background-size: important;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-content {
+  background-color: rgba(128, 128, 128, 0.8); /* abu-abu transparan */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: none;
+  color: white;
+}
+.hero-content h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.hero-content .btn {
+  padding: 10px 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+/* Room Items */
+.room-item {
+  background-color: #fff;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  text-align: center;
+}
+
+.room-item:hover {
+  transform: scale(1.05);
+}
+
+.room-item:hover img {
+  filter: brightness(0.8);
+}
+
+.room-item img {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: auto;
+}
+
+.room-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.room-item .price {
+  font-size: 1.2rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.room-item p {
+  color: #6c7577;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content .btn {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+  .room-item {
+    margin-bottom: 20px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Fixed Action Buttons (Explore Rooms & Book Your Stay) */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.action-buttons a {
+  margin: 0 10px;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.action-buttons .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.action-buttons .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.action-buttons .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .action-buttons a {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  /* Rapikan baris pilihan kamar */
+.booking-section .row {
+  display: flex;
+  align-items: center;
+}
+
+/* Kolom teks kamar dibuat fleksibel */
+.booking-section .col-7 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;      
+  /* cegah turun baris */
+  font-size: 14px;
+}
+
+/* Checkbox jangan dorong teks */
+.booking-section .form-check-input {
+  margin-top: 0;
+}
+
+/* Kotak jumlah tetap kecil & sejajar */
+.room-qty {
+  max-width: 60px;
+  text-align: center;
+  font-size: 14px;
+  height: 32px;
+}
+/* Pastikan container hero menjadi acuan */
+.hero,
+.hero .container,
+.hero .hero-content {
+  position: relative;
+}
+
+/* Bungkus gambar/logo */
+.hero-image-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 320px;      /* SESUAIKAN DENGAN LOGO */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Gambar / logo hitam */
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Kotak abu-abu (overlay teks & tombol) */
+.hero-overlay {
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;       /* KUNCI KE GAMBAR */
+  background: rgba(128,128,128,0.85);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+}
