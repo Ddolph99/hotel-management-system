@@ -19,11 +19,10 @@ body {
   text-align: center;
 }
 .hero-content {
-  background-color: rgba(128, 128, 128, 0.8); /* abu-abu transparan */
   padding: 40px;
   border-radius: 12px;
-  box-shadow: none;
-  color: white;
+  box-shadow: grey;
+  color: black;
 }
 .hero-content h1 {
   font-weight: 700;
@@ -186,40 +185,90 @@ footer a:hover {
   font-size: 14px;
   height: 32px;
 }
-/* Pastikan container hero menjadi acuan */
-.hero,
-.hero .container,
-.hero .hero-content {
-  position: relative;
+
+/* ===== FINAL LOCK HERO ===== */
+
+/* Pastikan hero-content TIDAK memaksa lebar */
+.hero-content {
+  max-width: none !important;
+  padding: 0 !important;
 }
 
-/* Bungkus gambar/logo */
-.hero-image-wrapper {
+/* Wrapper logo = acuan mutlak */
+.hero-logo {
   position: relative;
   display: inline-block;
-  max-width: 320px;      /* SESUAIKAN DENGAN LOGO */
-  width: 100%;
+  width: 280px;
+  max-width: 90%;
   margin: 0 auto;
 }
 
-/* Gambar / logo hitam */
-.hero-image-wrapper img {
+/* Gambar logo */
+.hero-logo img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Kotak abu-abu (overlay teks & tombol) */
+/* Overlay abu-abu TERKUNCI */
 .hero-overlay {
   position: absolute;
-  left: 50%;
-  bottom: 15%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  bottom: 18%;
   width: 100%;
-  max-width: 100%;       /* KUNCI KE GAMBAR */
+  max-width: 100%;
   background: rgba(128,128,128,0.85);
-  padding: 16px;
+  padding: 14px 12px;
   border-radius: 8px;
   text-align: center;
+  box-sizing: border-box;
+}
+
+/* Paksa Bootstrap berhenti ikut campur */
+.hero-overlay * {
+  max-width: 100%;
+}
+@media (max-width: 576px) {
+  .hero-logo {
+    width: 260px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 16px;
+  }
+
+  .hero-overlay p {
+    font-size: 13px;
+  }
+
+  .hero-overlay .btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-logo {
+    width: 320px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 18px;
+  }
+}
+.hero-logo {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 }
